@@ -1,0 +1,74 @@
+\documentclass{article}
+
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+
+\title{单摆法测重力加速度 \quad 实验设计}
+\author{崔俊熙 PB25000124}
+\date{2026-03-23}
+
+\begin{document}
+
+\maketitle
+
+\section{不确定度分析}
+
+在摆角$\theta < 5^\circ$、忽略空气浮力及摆线质量的一级近似条件下，单摆运动可视为简谐运动，其周期公式为
+\begin{equation}
+    T = 2\pi\sqrt{\frac{l}{g}}
+\end{equation}
+
+其中，$l$为有效摆长（摆线长与摆球半径之和）,$T$为摆动周期.
+
+由此可导出重力加速度计算公式：
+\begin{equation}
+    g = \frac{4\pi^2 l}{T^2}
+\end{equation}
+
+那么
+\begin{align}
+    \frac{\partial g}{\partial l} = \frac{4\pi^2}{T^2} = \frac{g}{l} \\
+    \frac{\partial g}{\partial T} = -\frac{8\pi^2 l}{T^3} = -\frac{2g}{T}
+\end{align}
+
+因此
+\begin{align}
+    u_g & = \sqrt{\left( \frac{\partial g}{\partial l} u_l \right)^2 + \left( \frac{\partial g}{\partial T} u_T \right)^2} \\
+        & = g \sqrt{\left( \frac{u_l}{l} \right)^2 + \left( \frac{2u_T}{T} \right)^2}
+\end{align}
+
+即
+\begin{equation}
+    \frac{u_g}{g} = \sqrt{\left( \frac{u_l}{l} \right)^2 + \left( \frac{2u_T}{T} \right)^2}
+\end{equation}
+
+有效摆长的不确定度来自钢卷尺测量摆线的误差,以及游标卡尺测量小球直径的误差.
+其中钢卷尺的误差为$\SI{0.2}{\centi\metre}$,游标卡尺的误差为$\SI{0.02}{\centi\metre}$.
+因此$u_l \approx \sqrt{(\SI{0.2}{\centi\metre})^2 + (\SI{0.02}{\centi\metre})^2} \approx \SI{0.2}{\centi\metre}$.
+
+周期的不确定度来自秒表的误差以及实验人员的反应时间.
+其中秒表的误差为$\SI{0.1}{\second}$,实验人员的反应时间误差为$\SI{0.2}{\second}$.
+因此$u_T \approx \sqrt{(\SI{0.1}{\second})^2 + (\SI{0.2}{\second})^2} \approx \SI{0.22}{\second}$.
+
+\section{测量周期数}
+
+当摆长$l = \SI{70}{\centi\metre}$时,取$g = \SI{9.8}{\metre\per\second\squared}$,得周期$T = \SI{1.68}{\second}$.
+这样$g$的相对不确定度为
+\begin{align}
+    \frac{u_g}{g} & = \sqrt{\left( \frac{u_l}{l} \right)^2 + \left( \frac{2u_T}{T} \right)^2}                                                                                      \\
+                  & \approx \sqrt{\left( \frac{\SI{0.2}{\centi\metre}}{\SI{70}{\centi\metre}} \right)^2 + \left( \frac{2 \times \SI{0.22}{\second}}{\SI{1.68}{\second}} \right)^2} \\
+                  & \approx 23.8 \% > 1 \%
+\end{align}
+
+这样不满足我们的实验精度要求.考虑重复测量$N$个周期,此时不确定度变为
+\begin{align}
+    \frac{u_g}{g} & = \sqrt{\left( \frac{u_l}{l} \right)^2 + \left( \frac{2u_T}{NT} \right)^2}                                                                                              \\
+                  & \approx \sqrt{\left( \frac{\SI{0.2}{\centi\metre}}{\SI{70}{\centi\metre}} \right)^2 + \left( \frac{2 \times \SI{0.22}{\second}}{N \times \SI{1.68}{\second}} \right)^2} \\
+                  & \approx \sqrt{\left( 0.00286 \right)^2 + \left( \frac{0.262}{N} \right)^2}
+\end{align}
+
+令$\frac{u_g}{g} \leqslant 1 \%$,解得$n \geqslant 25$,即至少要测量25个周期.
+
+\end{document}
