@@ -41,7 +41,7 @@
 % REQUIRED PACKAGES
 %----------------------------------------------------------
 
-\RequirePackage[utf8]{inputenc}
+% \RequirePackage[utf8]{inputenc}
 \RequirePackage{etoolbox}
 \RequirePackage[framemethod=tikz]{mdframed}
 \RequirePackage{titling}
@@ -56,7 +56,7 @@
 \RequirePackage{lastpage}
 \RequirePackage[explicit]{titlesec}
 \RequirePackage{booktabs}
-\RequirePackage{array} 
+\RequirePackage{array}
 \RequirePackage{caption}
 \RequirePackage{setspace}
 \RequirePackage{iflang}
@@ -73,7 +73,7 @@
 \RequirePackage{ccicons}
 \RequirePackage{imakeidx}
 \RequirePackage{subcaption}
-\RequirePackage{stfloats} 
+\RequirePackage{stfloats}
 \RequirePackage{authblk}
 % \RequirePackage{pbalance}
 
@@ -97,10 +97,10 @@
 %----------------------------------------------------------
 
 \RequirePackage[
-    left=1.25cm, 
-    right=1.25cm, 
-    top=2cm, 
-    bottom=2cm, 
+    left=1.25cm,
+    right=1.25cm,
+    top=2cm,
+    bottom=2cm,
     headsep=0.75cm
 ]{geometry}
 \setlength{\columnsep}{15pt}
@@ -144,7 +144,7 @@
 % FONTS
 %----------------------------------------------------------
 
-\usepackage[notextcomp]{stix2}
+% \usepackage[notextcomp]{stix2}
 \RequirePackage[scaled]{helvet}
 \renewcommand{\ttdefault}{lmtt}
 
@@ -182,7 +182,7 @@
 \newcommand{\theday}[1]{\def\@theday{#1}}
 
 \pagestyle{fancy}
-   \pagenumbering{arabic}
+\pagenumbering{arabic}
 
 % First page style
 \fancypagestyle{firststyle}{
@@ -233,18 +233,18 @@
 
 \newcommand{\rhoinfo}{
     \rhoinfofont
-        \vskip5pt
-            {\ifx\@corres\undefined\else\textcolor{rhocolor}{\bfseries\ignorespaces\correslanguage}\@corres\fi} 
-            {\ifx\@email\undefined\else\textcolor{rhocolor}{\itshape\ignorespaces\emaillanguage}\@email\fi\par}
-            {\ifx\@doi\undefined\else\textcolor{rhocolor}{\bfseries DOI: }\@doi\fi\par}
-            {\ifx\@received\undefined\else\textcolor{rhocolor}{\bfseries\ignorespaces\receivedlanguage}\@received\hspace{10pt}\fi}
-            {\ifx\@revised\undefined\else\textcolor{rhocolor}{\bfseries\ignorespaces\revisedlanguage}\@revised\hspace{10pt}\fi} 
-            {\ifx\@accepted\undefined\else\textcolor{rhocolor}{\bfseries\ignorespaces\acceptedlanguage}\@accepted\hspace{10pt}\fi}
-            {\ifx\@published\undefined\else\textcolor{rhocolor}{\bfseries\ignorespaces\publishedlanguage}\@published\fi\par}
-                \vskip3pt
-            {\@license\par}
-         \vskip1pt
-        \rule{\textwidth}{0.3pt}
+    \vskip5pt
+    {\ifx\@corres\undefined\else\textcolor{rhocolor}{\bfseries\ignorespaces\correslanguage}\@corres\fi}
+    {\ifx\@email\undefined\else\textcolor{rhocolor}{\itshape\ignorespaces\emaillanguage}\@email\fi\par}
+    {\ifx\@doi\undefined\else\textcolor{rhocolor}{\bfseries DOI: }\@doi\fi\par}
+    {\ifx\@received\undefined\else\textcolor{rhocolor}{\bfseries\ignorespaces\receivedlanguage}\@received\hspace{10pt}\fi}
+    {\ifx\@revised\undefined\else\textcolor{rhocolor}{\bfseries\ignorespaces\revisedlanguage}\@revised\hspace{10pt}\fi}
+    {\ifx\@accepted\undefined\else\textcolor{rhocolor}{\bfseries\ignorespaces\acceptedlanguage}\@accepted\hspace{10pt}\fi}
+    {\ifx\@published\undefined\else\textcolor{rhocolor}{\bfseries\ignorespaces\publishedlanguage}\@published\fi\par}
+    \vskip3pt
+    {\@license\par}
+    \vskip1pt
+    \rule{\textwidth}{0.3pt}
 }
 
 %----------------------------------------------------------
@@ -262,14 +262,14 @@
 \def\xabstract{abstract}
 \long\def\abstract#1\end#2{
     \def\two{#2}\ifx\two\xabstract
-    \long\gdef\theabstract{\ignorespaces#1}
-    \def\go{\end{abstract}}
-\else
-    #1\end{#2}
-    \gdef\theabstract{\vskip12pt 
-    \vskip12pt}
-    \let\go\relax\fi
-\go}
+        \long\gdef\theabstract{\ignorespaces#1}
+        \def\go{\end{abstract}}
+    \else
+        #1\end{#2}
+        \gdef\theabstract{\vskip12pt
+            \vskip12pt}
+        \let\go\relax\fi
+    \go}
 
 % Rho class abstract style 
 \newcommand{\rhoabstract}{
@@ -298,12 +298,12 @@
         {\ifx\@journalname\undefined\vskip-18pt\else\vskip-25pt\RaggedRight\sffamily\bfseries\@journalname\par\fi}
         {\RaggedRight\color{rhocolor}\sffamily\bfseries\fontsize{16}{22}\selectfont\@title\par}
         \vskip10pt
-            {\RaggedRight\@author\par}
+        {\RaggedRight\@author\par}
         \vskip8pt
-            {\ifx\@dates\undefined\vskip2pt\else\RaggedRight\datesfont\@dates\par\vskip15pt\fi}
+        {\ifx\@dates\undefined\vskip2pt\else\RaggedRight\datesfont\@dates\par\vskip15pt\fi}
         \ifbool{rho-abstract}{\RaggedRight\rhoabstract}{}
         \ifbool{corres-info}{\RaggedRight\rhoinfo}{}
-    } 
+    }
     \egroup
     \vskip12pt
 }
@@ -330,39 +330,39 @@
 \setcounter{secnumdepth}{5}
 
 \titleformat{\section}
-    {\color{rhocolor}\sffamily\large\bfseries}
-    {\thesection.}
-    {0.5em}
-    {#1}
-    []
+{\color{rhocolor}\sffamily\large\bfseries}
+{\thesection.}
+{0.5em}
+{#1}
+[]
 
 \titleformat{name=\section,numberless}[block]
-    {\color{rhocolor}\sffamily\large\bfseries}
-    {}
-    {0em}
-    {\tikz\draw[rhocolor, fill=rhocolor] (0,0) rectangle (6.6pt,6.6pt); \hspace{2.5pt} {#1}}
-    []
-  
+{\color{rhocolor}\sffamily\large\bfseries}
+{}
+{0em}
+{\tikz\draw[rhocolor, fill=rhocolor] (0,0) rectangle (6.6pt,6.6pt); \hspace{2.5pt} {#1}}
+[]
+
 \titleformat{\subsection}[block]
-    {\sffamily\bfseries}
-    {\thesubsection.}
-    {0.5em}
-    {#1}     
-    []
-  
+{\sffamily\bfseries}
+{\thesubsection.}
+{0.5em}
+{#1}
+[]
+
 \titleformat{\subsubsection}[block] % You may change it to "runin"
-    {\small\sffamily\bfseries\itshape}
-    {\thesubsubsection.}
-    {0.5em}
-    {#1}      % If using runin, change #1 to '#1. ' (space at the end)
-    []    
-  
+{\small\sffamily\bfseries\itshape}
+{\thesubsubsection.}
+{0.5em}
+{#1}      % If using runin, change #1 to '#1. ' (space at the end)
+[]
+
 \titleformat{\paragraph}[runin]
-    {\small\bfseries}
-    {}
-    {0em}
-    {#1} 
-  
+{\small\bfseries}
+{}
+{0em}
+{#1}
+
 \titlespacing*{\section}{0pc}{3ex \@plus4pt \@minus3pt}{5pt}
 \titlespacing*{\subsection}{0pc}{2.5ex \@plus3pt \@minus2pt}{2pt}
 \titlespacing*{\subsubsection}{0pc}{2ex \@plus2.5pt \@minus1.5pt}{2pt}
@@ -372,7 +372,7 @@
 % TABLE OF CONTENTS
 %----------------------------------------------------------
 
-\newlength{\tocsep} 
+\newlength{\tocsep}
 \setlength\tocsep{1.5pc} % Sets the indentation of the sections in the table of contents
 \setcounter{tocdepth}{5} % Three levels in the table of contents section: sections, subsections and subsubsections
 
@@ -382,25 +382,25 @@
 %!TEX If using numberless sections we recomend to change the values 
 
 \titlecontents{section}[\tocsep] % \setlength\tocsep{0c}
-    {\addvspace{4pt}\sffamily\selectfont\bfseries}
-    {\contentslabel[\thecontentslabel]{\tocsep}}
-    {}
-    {\hfill\thecontentspage}
-    []
+{\addvspace{4pt}\sffamily\selectfont\bfseries}
+{\contentslabel[\thecontentslabel]{\tocsep}}
+{}
+{\hfill\thecontentspage}
+[]
 
 \titlecontents{subsection}[3pc] % 1pc
-    {\addvspace{4pt}\small\sffamily\selectfont}
-    {\contentslabel[\thecontentslabel]{\tocsep}}
-    {}
-    {\ \titlerule*[.5pc]{.}\ \thecontentspage}
-    []
+{\addvspace{4pt}\small\sffamily\selectfont}
+{\contentslabel[\thecontentslabel]{\tocsep}}
+{}
+{\ \titlerule*[.5pc]{.}\ \thecontentspage}
+[]
 
 \titlecontents*{subsubsection}[3pc] % 1pc
-    {\footnotesize\sffamily\selectfont}
-    {}
-    {}
-    {}
-    [\ \textbullet\ ]
+{\footnotesize\sffamily\selectfont}
+{}
+{}
+{}
+[\ \textbullet\ ]
 
 %----------------------------------------------------------
 % FIGURE-, TABLE-, LISTINGS- CAPTION STYLE
@@ -437,7 +437,7 @@
 %----------------------------------------------------------
 
 % Defined colors for listings environment
-\definecolor{rhocodeback}{RGB}{248, 248, 248}  
+\definecolor{rhocodeback}{RGB}{248, 248, 248}
 % \definecolor{rhocodeback}{RGB}{255, 255, 255}     % Alternative back color
 \definecolor{rhocodecomment}{RGB}{1, 136, 0}
 \definecolor{rhocodekey}{RGB}{53, 53, 128}
@@ -447,21 +447,21 @@
 
 % Rho codes style
 \lstdefinestyle{rhocoding}{
-    backgroundcolor=\color{rhocodeback},   
+    backgroundcolor=\color{rhocodeback},
     commentstyle=\color{rhocodecomment},
     keywordstyle=\color{rhocodekey},
     numberstyle=\tiny\color{rhogray},
     stringstyle=\color{rhocodestring},
-    breakatwhitespace=false,        
+    breakatwhitespace=false,
     basicstyle=\small\ttfamily,
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
     numbers=left,				 	% if "none" change the values  
     numbersep=8pt,    				% 0pt              
-    showspaces=false,                
+    showspaces=false,
     showstringspaces=false,
-    showtabs=false,                  
+    showtabs=false,
     tabsize=2,
     aboveskip=12pt,
     belowskip=8pt,
@@ -488,7 +488,7 @@
 \renewcommand*{\footnotelayout}{\normalfont\fontsize{6}{8}}
 \renewcommand{\footnoterule}{
     \kern -3pt
-    {\color{black50} \hrule width 75pt height 0.25pt}
+        {\color{black50} \hrule width 75pt height 0.25pt}
     \kern 2.5pt
 }
 
