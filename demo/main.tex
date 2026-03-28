@@ -5,6 +5,10 @@
 \usepackage{siunitx}
 \usepackage{hyperref}
 \usepackage{indentfirst}
+\usepackage{fontspec}
+
+\setmainfont{Noto Serif CJK SC}
+\setsansfont{Noto Sans CJK SC}
 
 \setbool{rho-abstract}{true} % Set false to hide the abstract
 \setbool{corres-info}{false} % Set false to hide the corresponding author section
@@ -28,23 +32,24 @@
 % AUTHORS AND AFFILIATIONS
 %----------------------------------------------------------
 
-\author[1,$\dagger$]{崔俊熙}
-\author[2,$\ddagger$]{实验主管老师}
-\author[2,$\ddagger$]{实验助教}
-
+% \author[1,$\dagger$]{崔俊熙}
+% \author[2,$\ddagger$]{实验主管老师}
+% \author[2,$\ddagger$]{实验助教}
+\author{崔俊熙 PB25000124}
 
 %----------------------------------------------------------
 
-\affil[1]{中国科学技术大学少年班学院}
-\affil[2]{中国科学技术大学物理学院}
-\affil[$\dagger$]{学号: PB25000124.}
-\affil[$\ddagger$]{实验指导教师.}
+% \affil[1]{中国科学技术大学少年班学院}
+% \affil[2]{中国科学技术大学物理学院}
+% \affil[$\dagger$]{学号: PB25000124.}
+% \affil[$\ddagger$]{实验指导教师.}
 
 %----------------------------------------------------------
 % DATES
 %----------------------------------------------------------
 
-\dates{本篇实验报告收稿于2026年XX月XX日，于2026年XX月XX日提交.}
+% \dates{本篇实验报告收稿于2026年XX月XX日，于2026年XX月XX日提交.}
+\dates{2026-XX-XX}
 
 %----------------------------------------------------------
 % FOOTER INFORMATION
@@ -54,21 +59,29 @@
 \footinfo{大学物理-基础实验B 实验报告}
 \smalltitle{XXXX \  实验报告}
 \institution{中国科学技术大学}
-\theday{2026.XX.XX} %\today
+\theday{2026-XX-XX} %\today
 
 %----------------------------------------------------------
 % ARTICLE INFORMATION
 %----------------------------------------------------------
 
-\corres{Provide the corresponding author information and publisher here.}
-\email{luosw@mail.ustc.edu.cn.}
+% \corres{Provide the corresponding author information and publisher here.}
+\email{cuijunxi@mail.ustc.edu.cn.}
 
-\received{March 20, 2024}
-\revised{April 16, 2024}
-\accepted{April 20, 2024}
-\published{May 21, 2024}
+% \received{March 20, 2024}
+% \revised{April 16, 2024}
+% \accepted{April 20, 2024}
+% \published{May 21, 2024}
 
-\license{Rho LaTeX Class \ccLogo\ This document is licensed under Creative Commons CC BY 4.0.}
+% \license{Rho LaTeX Class \ccLogo\ This document is licensed under Creative Commons CC BY 4.0.}
+
+\hypersetup{
+    pdftitle={XXXX 实验报告},
+    pdfauthor={崔俊熙},
+    pdfsubject={大学物理-基础实验B 实验报告},
+    pdfcreator={LaTeX},
+    pdfproducer={XeLaTeX}
+}
 
 %----------------------------------------------------------
 % ABSTRACT
